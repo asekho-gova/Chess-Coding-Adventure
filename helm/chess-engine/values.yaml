@@ -1,0 +1,32 @@
+# Default values for chess-engine
+replicaCount: 1
+
+image:
+  repository: chess-coding-adventure
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+resources:
+  limits:
+    cpu: "1"
+    memory: "512Mi"
+  requests:
+    cpu: "500m"
+    memory: "256Mi"
+
+podSecurityContext: {}
+securityContext: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+# UCI Engine Configuration
+uci:
+  # Time per move in milliseconds
+  moveTimeMs: 1000
+  # Maximum memory for transposition table in MB
+  hashSizeMb: 128

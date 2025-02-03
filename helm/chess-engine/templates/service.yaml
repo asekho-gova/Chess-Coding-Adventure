@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "chess-engine.fullname" . }}
+  labels:
+    {{- include "chess-engine.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  clusterIP: None  # Headless service
+  ports:
+    - port: 9999  # Placeholder port for potential future UCI protocol networking
+      targetPort: 9999
+      protocol: TCP
+      name: uci
+  selector:
+    {{- include "chess-engine.selectorLabels" . | nindent 4 }}

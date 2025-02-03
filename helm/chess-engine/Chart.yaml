@@ -1,0 +1,14 @@
+apiVersion: v2
+name: chess-engine
+description: A Helm chart for deploying the Chess-Coding-Adventure UCI chess engine
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - chess
+  - uci
+  - game
+maintainers:
+  - name: Derivco
+sources:
+  - https://github.com/asekho-gova/Chess-Coding-Adventure
